@@ -47,7 +47,7 @@ Mean time to failure (MTTF) of hard disks is about 10 to 50 years.
 
 2. Scalability
 
-As the system grows (in data volume, traffic volume, or complexity), there should be resonable ways of dealing with that growth.
+As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth.
 
 + Describing Load
 
