@@ -23,10 +23,35 @@ Mean time to failure (MTTF) of hard disks is about 10 to 50 years.
 
 （2） Use software fault-tolerance techniques
 
++ Software errors
+
+ (1) Carefully thinking about assumptions and interactions in the system;
+ 
+ (2) Thorough testing;
+ 
+ (3) Process isolation;
+ 
+ (4) Allowing processes to crash and restart;
+ 
+ (5) Measuring, monitoring, and analyzing system behavior in production.
+ 
++ Human errors
+
+ (1) System design: well-designed abstractions, APIs and admin interfaces;
+ 
+ (2) Provide fully featured non-production sandbox environment for people to explore and experiment safely, using real data, without affecting real users;
+ 
+ (3) Thorough testing; automated testing;
+ 
+ (4) Set up detailed and clear monitoring, such as performance metrics and error rates;
 
 2. Scalability
 
 As the system grows (in data volume, traffic volume, or complexity), there should be resonable ways of dealing with that growth.
+
++ Describing Load
+
+Load Parameters: requests per second (to a Web Server); the ratio of reads to writes (in a Database); the number of simultaneously active users (in a chat room); the hit rate (on a cache)
 
 3. Maintainability
 
