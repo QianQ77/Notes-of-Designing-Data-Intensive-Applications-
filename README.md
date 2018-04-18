@@ -53,6 +53,18 @@ As the system grows (in data volume, traffic volume, or complexity), there shoul
 
 Load Parameters: requests per second (to a Web Server); the ratio of reads to writes (in a Database); the number of simultaneously active users (in a chat room); the hit rate (on a cache)
 
++ Describing Performance
+
+Throughput: the number of records we can process per second;
+
+Response Time = Service Time + Network Delays + Queueing Delays;
+
+Usually it is better to use percentiles than average response time. The median is also knowsn as the 50th percentile, abbr. p50. In order to figure out how bad your outliers are, you can look at higher percentiles: the 95th, 99th, 99.9th percentiles. p95, i.e. the 95th percentile, means 95% of requests are faster than this threshold.
+
+Latency: the duration that a request is waiting to be handled - during which it is latent, awaiting service;
+
+
+
 3. Maintainability
 
 The system should be easily envolved and worked on by many different people productively.
