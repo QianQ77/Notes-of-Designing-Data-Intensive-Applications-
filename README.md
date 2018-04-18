@@ -59,11 +59,19 @@ Throughput: the number of records we can process per second;
 
 Response Time = Service Time + Network Delays + Queueing Delays;
 
-Usually it is better to use percentiles than average response time. The median is also knowsn as the 50th percentile, abbr. p50. In order to figure out how bad your outliers are, you can look at higher percentiles: the 95th, 99th, 99.9th percentiles. p95, i.e. the 95th percentile, means 95% of requests are faster than this threshold.
+Usually it is better to use percentiles than average response time. The median is also knowsn as the 50th percentile, abbr. p50. In order to figure out how bad your outliers are, you can look at higher percentiles: the 95th, 99th, 99.9th percentiles. p95, i.e. the 95th percentile, means 95% of requests are faster than this threshold. High percentiles of response times, also known as tail latencies, are important because they directly affect users' experience of the service, e.g. for Amazon, the customers with the slowest requests are often the most valuable customers.
+
+Queueing delays, caused by a small number of slow requests holding up the processing of subsequent requests, i.e. head-of-line blocking, often account for a large part of the response time at high percentiles.
 
 Latency: the duration that a request is waiting to be handled - during which it is latent, awaiting service;
 
++ Approaches for Coping with Load
 
+Good architectures usually involve a pragmatic mixture of *scailing up* (vertical scaling, moving to a more powerful machine) and *scaling out* (horizontal scaling, distributing the load across multiple smaller machines).
+
+Some systems are *elastic*, meaining that they can automatically add computing resources when they detect a load increase.
+
+While distributing stateless services across multiple machines is fairly straitforward, taking stateful data systems from a single node to a distributed setup can introduce a lot of additional complexity.
 
 3. Maintainability
 
